@@ -22,6 +22,7 @@ const openPanel = (key) => {
   document.querySelector('#panel-title').textContent = data.title;
   document.querySelector('#panel-description').textContent = data.description;
   document.querySelector('#panel-fact').textContent = data.fact;
+  document.querySelector('#sirius-second-fact').hidden = key !== 'sirius';
   const visual = document.querySelector('#panel-visual');
   visual.className = `panel-visual ${data.visual}`;
   const planetImages = {

@@ -264,3 +264,42 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 26px
   .panel-visual.saturn-visual::before { width: min(72%, 134px); }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+
+/* Solar System orbital animation */
+@property --orbit-progress {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes solar-orbit {
+  from { --orbit-progress: 0deg; }
+  to { --orbit-progress: 360deg; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mercury-orbit { --orbit-period: 52s; }
+  .venus-orbit { --orbit-period: 78s; }
+  .earth-orbit { --orbit-period: 110s; }
+  .mars-orbit { --orbit-period: 148s; }
+  .jupiter-orbit { --orbit-period: 210s; }
+  .saturn-orbit { --orbit-period: 275s; }
+  .uranus-orbit { --orbit-period: 350s; }
+  .neptune-orbit { --orbit-period: 440s; }
+
+  .planetarium .orbit .planet {
+    --orbital-angle: calc(var(--angle) + var(--orbit-progress, 0deg));
+    left: calc(50% + 50% * cos(var(--orbital-angle)));
+    top: calc(50% + 50% * sin(var(--orbital-angle)));
+    animation: solar-orbit var(--orbit-period) linear infinite;
+  }
+
+  .planetarium .orbit .planet:focus-visible,
+  body:has(#info-panel[open] :is(.planet-visual, .saturn-visual, .system-visual)) .planetarium .orbit .planet {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .planetarium .orbit .planet:hover { animation-play-state: paused; }
+}
