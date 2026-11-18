@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Midnight Observatory: a quiet interactive journey through the night sky, our solar system, constellations, and the Milky Way.">
+  <title>The Midnight Observatory</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#observatory" aria-label="The Midnight Observatory home">M<span>O</span></a>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="#observatory">Observatory</a>
+      <a href="#night-sky">Night Sky</a>
+      <a href="#solar-system">Solar System</a>
+      <a href="#constellations">Constellations</a>
+      <a href="#milky-way">Milky Way</a>
+    </nav>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="observatory" aria-labelledby="hero-title">
+      <div class="stars" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="kicker">A small atlas of the night</p>
+        <h1 id="hero-title">The Midnight<br><em>Observatory</em></h1>
+        <p class="hero-subtitle">A little journey through our universe.</p>
+        <p class="hero-prompt">Choose a path to explore <span>↓</span></p>
+      </div>
+      <div class="hero-scene">
+        <div class="arch-window" aria-hidden="true">
+        </div>
+        <div class="hero-destinations">
+          <a class="destination moon-destination" href="#night-sky"><span class="destination-art mini-moon"></span><span>Night Sky<small>the familiar above</small></span></a>
+          <a class="destination system-destination" href="#solar-system"><span class="destination-art mini-system" aria-hidden="true"><i></i><b></b><em></em></span><span>Solar System<small>our planetary home</small></span></a>
+          <a class="destination constellation-destination" href="#constellations"><span class="destination-art mini-constellation" aria-hidden="true"><svg viewBox="0 0 52 52"><path d="M7 38L18 16L31 31L44 10M18 16L31 31"/><circle cx="7" cy="38" r="2"/><circle cx="18" cy="16" r="2.5"/><circle cx="31" cy="31" r="2"/><circle cx="44" cy="10" r="2.5"/></svg></span><span>Constellations<small>stories in starlight</small></span></a>
+          <a class="destination galaxy-destination" href="#milky-way"><span class="destination-art mini-galaxy" aria-hidden="true"><svg viewBox="0 0 52 52"><path d="M26 26C16 23 17 12 27 10C37 8 43 18 38 27C34 36 20 41 12 34C4 27 8 15 18 10"/><path d="M26 26C33 29 32 38 24 41C15 44 6 35 9 26C12 17 24 14 31 20"/><circle cx="26" cy="26" r="3"/><circle cx="39" cy="16" r="1"/><circle cx="10" cy="32" r="1"/></svg></span><span>Milky Way<small>our wider address</small></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="explore-section night-section" id="night-sky" aria-labelledby="night-title">
+      <div class="section-intro"><p class="kicker">01 / Above the horizon</p><h2 id="night-title">Night <em>Sky</em></h2><p>Begin with the objects that have kept watch over every human story. This is a curated sky, not a live chart.</p></div>
+      <div class="sky-map">
+        <span class="map-star ms-1"></span><span class="map-star ms-2"></span><span class="map-star ms-3"></span><span class="map-star ms-4"></span><span class="map-star ms-5"></span>
+        <button class="sky-object moon-object" data-panel="moon" aria-label="Learn about the Moon"><span></span><strong>Moon</strong></button>
+        <button class="sky-object star-object sirius" data-panel="sirius" aria-label="Learn about Sirius"><span aria-hidden="true"></span><strong>Sirius</strong></button>
+        <button class="sky-object star-object polaris" data-panel="polaris" aria-label="Learn about Polaris"><span aria-hidden="true"></span><strong>Polaris</strong></button>
+        <div class="sky-caption">A few familiar lights<br><small>select an object</small></div>
+      </div>
+    </section>
+
+    <section class="explore-section system-section" id="solar-system" aria-labelledby="system-title">
+      <div class="section-intro"><p class="kicker">02 / Our neighborhood</p><h2 id="system-title">Solar <em>System</em></h2><p>Eight worlds, one star, and an extraordinary amount of empty space. Sizes and distances here are arranged for exploration, not to scale.</p></div>
+      <div class="planetarium" aria-label="Interactive diagram of the Sun and eight planets">
+        <button class="planet sun" data-panel="sun" aria-label="Learn about the Sun">Sun</button>
+        <div class="orbit mercury-orbit"><button class="planet mercury" data-panel="mercury" aria-label="Learn about Mercury">Mercury</button></div>
+        <div class="orbit venus-orbit"><button class="planet venus" data-panel="venus" aria-label="Learn about Venus">Venus</button></div>
+        <div class="orbit earth-orbit"><button class="planet earth" data-panel="earth" aria-label="Learn about Earth">Earth</button></div>
+        <div class="orbit mars-orbit"><button class="planet mars" data-panel="mars" aria-label="Learn about Mars">Mars</button></div>
+        <div class="orbit jupiter-orbit"><button class="planet jupiter" data-panel="jupiter" aria-label="Learn about Jupiter">Jupiter</button></div>
+        <div class="orbit saturn-orbit"><button class="planet saturn" data-panel="saturn" aria-label="Learn about Saturn">Saturn</button></div>
+        <div class="orbit uranus-orbit"><button class="planet uranus" data-panel="uranus" aria-label="Learn about Uranus">Uranus</button></div>
+        <div class="orbit neptune-orbit"><button class="planet neptune" data-panel="neptune" aria-label="Learn about Neptune">Neptune</button></div>
+      </div>
+      <p class="scale-note">The Sun and planets are shown in a conversational arrangement.</p>
+    </section>
+
+    <section class="explore-section constellation-section" id="constellations" aria-labelledby="constellation-title">
+      <div class="section-intro"><p class="kicker">03 / Patterns in the dark</p><h2 id="constellation-title">Constellations</h2><p>Connect the stars and the sky becomes a map of memory. Select a pattern to see how to find it.</p></div>
+      <div class="constellation-layout">
+        <div class="constellation-tabs" role="tablist" aria-label="Constellation choices">
+          <button role="tab" aria-selected="true" data-constellation="orion">Orion</button>
+          <button role="tab" aria-selected="false" data-constellation="cassiopeia">Cassiopeia</button>
+          <button role="tab" aria-selected="false" data-constellation="ursa">Ursa Major</button>
+        </div>
+        <div class="constellation-stage">
+          <svg id="constellation-svg" viewBox="0 0 500 360" role="img" aria-label="Orion constellation diagram">
+            <g class="constellation-lines"></g><g class="constellation-stars"></g>
+          </svg>
+        </div>
+        <div class="constellation-copy"><p class="kicker" id="constellation-region">The hunter</p><h3 id="constellation-name">Orion</h3><p id="constellation-description">Look for three evenly spaced stars in a short line: Orion's Belt. From there, the bright red shoulder and blue-white foot make the shape easy to recognize.</p><p class="fact-label">A story to carry</p><p id="constellation-fact">In Greek myth, Orion was a giant hunter. The myth is a cultural story, not an explanation for the stars' physical relationship.</p></div>
+      </div>
+    </section>
+
+    <section class="explore-section galaxy-section" id="milky-way" aria-labelledby="galaxy-title">
+      <figure class="galaxy-art" aria-label="Artist impression of a barred spiral galaxy resembling the Milky Way">
+        <img src="assets/barred-spiral-galaxy.png" alt="NASA illustration of a face-on barred spiral galaxy" width="2129" height="1602">
+        <button class="solar-marker" data-panel="galaxy" aria-label="Learn about our place in the galaxy"><span></span><small>Solar System</small></button>
+      </figure>
+      <div class="galaxy-copy"><p class="kicker">04 / A wider address</p><h2 id="galaxy-title">The <em>Milky Way</em></h2><p class="galaxy-subtitle">Our home in the universe.</p><p>From this quiet corner of a spiral galaxy, the night sky is only the view from one small world.</p><button class="text-button" data-panel="galaxy">Our place in the galaxy <span>→</span></button></div>
+      <p class="approximation">Artistic view · Solar System marker is approximate</p>
+    </section>
+  </main>
+
+  <footer><span>The Midnight Observatory</span><span>Made for curious night owls · 2026</span><a href="#observatory">Back to the dome ↑</a></footer>
+
+  <dialog class="info-panel" id="info-panel" aria-labelledby="panel-title">
+    <button class="panel-close" type="button" aria-label="Close information panel">×</button>
+    <div class="panel-visual" id="panel-visual"></div>
+    <div class="panel-content"><p class="kicker" id="panel-kicker">A closer look</p><h2 id="panel-title"></h2><p id="panel-description"></p><div class="panel-fact"><span>Did you know?</span><p id="panel-fact"></p></div></div>
+  </dialog>
+</body>
+</html>
